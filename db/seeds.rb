@@ -7,3 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+User.create!(email: 'admin@example.com', password: 'password123', password_confirmation: 'password123')
+
+50.times do
+  Course.create!([{
+    title: Faker::Educator.course_name,
+    description: Faker::Movies::Hobbit.quote,
+    user_id: User.first.id
+  }])
+end
