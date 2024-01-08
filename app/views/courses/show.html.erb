@@ -1,6 +1,4 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @course %>
+<%= render 'courses/course', course: @course%>
 
 <div>
   <%= link_to "Edit this course", edit_course_path(@course) %> |

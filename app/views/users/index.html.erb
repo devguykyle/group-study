@@ -1,0 +1,5 @@
+<div class="card-columns">
+  <% @user.each do |user|%>
+    <%= render 'users/user', user: user%>
+  <% end %>
+</div>

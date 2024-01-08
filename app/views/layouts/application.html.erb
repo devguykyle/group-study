@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GroupStudy</title>
+    <meta content="text/html" charset="UTF-8" http-equiv="Content-Type">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta content="text/html" charset="UTF-8" http-equiv="Content-Type">
+    <title>GroupStudy</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,8 +14,9 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <%= render 'layouts/messages' %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

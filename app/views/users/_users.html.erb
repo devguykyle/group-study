@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-header">
+    <span class="fa fa-user"></span>
+    <%= user.email %>
+  </div>
+  <div class="card-body">
+    Signed Up
+    <%= time_ago_in_words(user.created_at) %> ago
+  </div>
+  <div class="row"></div>
+  <div class="card-footer">
+    total sign ins: <%= user.sign_in_count %>
+    current sign in: <%= user.current_sign_in_at %>
+    last sign in: <%= user.last_sign_in_at %>
+    current ip: <%= user.current_sign_in_ip %>
+    last ip: <%= user.last_sign_in_ip %>
+  </div>
+</div>

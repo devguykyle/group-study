@@ -1,2 +1,45 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<p></p>
+<div class="p-5 mb-4 bg-light rounded-3">
+  <div class="display-4">Let's Learn Together!</div>
+  <div class="p-4"></div>
+  <%= form_tag(root_path, method: :get) do %>
+          <div class="input-group">
+            <%= text_field_tag :title, params[:title], autocomplete: 'off', placeholder: 'search', id: "inputName", class: "form-control-sm" %>
+            <span class="input-group-append">
+              <button class="btn btn-primary btn-sm" type="submit">
+                <span class="fa fa-search" aria-hidden="true">
+                </span>
+              </button>
+            </span>
+          </div>
+        <% end %>
+</div>
+
+<div class="card-group">
+  <div class="card card-body">
+    <h1>
+      <span class="fa fa-graduation-cap"></span>
+      <%= Course.count %>
+      online courses
+    </h1>
+    <div class="row">
+      explore courses in every topic
+    </div>
+  </div>
+</div>
+
+<hr/>
+<h3>Popular</h3>
+<% @courses.each do |course| %>
+    <%= render 'courses/course', course: course %>
+  <% end %>
+<hr/>
+<h3>Top Rated</h3>
+<% @courses.each do |course| %>
+    <%= render 'courses/course', course: course %>
+  <% end %>
+<hr/>
+<h3>New Courses</h3>
+<% @newest_courses.each do |course| %>
+    <%= render 'courses/course', course: course %>
+  <% end %>
